@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -n "$1" ]
+then
+case "$1" in
+updatescript) VERSION="0"
+;;
+hack) echo "The version is 2.0, prpver hack isn't needed."
+;;
+esac
+else
+echo "
+Your prp version is 2."$VERSION"
+Author: RomanDesigner /// This is indie project.
+"
+exit 0
+fi
