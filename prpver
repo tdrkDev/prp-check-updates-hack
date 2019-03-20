@@ -1,19 +1,19 @@
 #!/bin/bash
-VERSION="0"
+VERSIONSCRIPT="0"
 if [ -n "$1" ]
 then
 case "$1" in
-updatescriptold) OLDVERSION="$VERSION"
+updatescriptold) echo "$VERSIONSCRIPT"
 ;;
-updatescriptnew) UPDATERVERSION="$VERSION"
+updatescriptnew) echo "$VERSIONSCRIPT"
 ;;
-hack) echo "The version is 2.0, prpver hack isn't needed."
+hack) echo "prpver hack already completed, version is 2.0"
+exit 0
 ;;
 esac
-exit 0
 else
 echo "
-Your prp version is 2."$VERSION"
+Your prp version is 2."$VERSIONSCRIPT"
 Author: RomanDesigner /// This is indie project.
 "
 exit 0
