@@ -23,8 +23,6 @@ rm -Rf /home/$USER/.prpvertmp/
 echo -n "Reversing... [100%]"
 exit 0
 ;;
-*) echo "Parameter "$2" not exist."
-;;
 esac
 else
 echo "prpver hack already completed, version is 2.0
