@@ -7,7 +7,27 @@ updatescriptold) echo "$VERSIONSCRIPT"
 ;;
 updatescriptnew) echo "$VERSIONSCRIPT"
 ;;
-hack) echo "prpver hack already completed, version is 2.0"
+hack)
+if [ -n "$2" ]
+then
+case "$2" in
+--reverse|-r) echo -e "Reversing... [0%]\r"
+git clone -q https://github.com/prp-n/main.git /home/$USER/.prpvertmp/
+echo -ne "Reversing... [25%]\r"
+rm /home/$USER/.prp/prpver
+echo -ne "Reversing... [50%]\r"
+cp /home/$USER/.prpvertmp/prpver /home/$USER/.prp/prpver
+cd /home/$USER/.prp/ && chmod +x prpver
+echo -ne "Reversing... [75%]\r"
+rm -Rf /home/$USER/.prpvertmp/
+echo -n "Reversing... [100%]"
+exit 0
+;;
+esac
+else
+echo "prpver hack already completed, version is 2.0
+You can increase only version with: prpver hack -r"
+fi
 exit 0
 ;;
 esac
